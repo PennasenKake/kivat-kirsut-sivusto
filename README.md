@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# 🐕 Kivat Kirsut ry – koiraharrastusseuran verkkosivusto
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Responsiivinen React-verkkosivusto kuvitteelliselle nilsiäläiselle koiraharrastusseuralle. Sivusto esittelee seuran harrastuslajit ja tapahtumat ja kertoo, miten seuraan saa yhteyden.
 
-## Available Scripts
+**Kurssiprojekti:** Web- ja mobiilikäyttöliittymät, Savonia-ammattikorkeakoulu (kevät 2024)
 
-In the project directory, you can run:
+![Etusivu](docs/etusivu.png)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tavoite
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Kurssin tehtävänä oli toteuttaa monisivuinen verkkosivusto, jonka käyttökokemus säilyy hyvänä sekä tietokoneella että mobiililaitteella. Painopiste oli käyttöliittymässä, joten sivusto on toteutettu pelkkänä frontendinä.
 
-### `npm test`
+## Ominaisuudet
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Viisi näkymää** React Routerilla: Koti, Lajiesittely, Tapahtumat, Yhteystiedot ja Käyttöehdot
+- **Responsiivinen asettelu** Bootstrapin ruudukolla. Kuvat, kartat ja taulukot mukautuvat näytön kokoon.
+- **Yhteiset komponentit** (Header, Navbar, Jumbotron, Footer) kaikilla sivuilla
+- **Lajiesittely:** kuusi harrastusmuotoa (käytöskoulutus, rally-toko, etsintä, vesipelastus, agility, näyttelyharjoittelu) kuvineen
+- **Yhteystiedot:** upotetut Google Maps -kartat harjoituspaikoista, yhteydenottolomakkeen käyttöliittymä, video ja vastuuhenkilötaulukko
+- **"Ylös"-painike**, joka ilmestyy sivua vieritettäessä (`useEffect` ja scroll-kuuntelija, joka siivotaan komponentin purkautuessa)
 
-### `npm run build`
+## Teknologiat
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Osa | Tekniikat |
+|---|---|
+| Käyttöliittymä | React 18, React Router 6 |
+| Tyylit ja asettelu | Bootstrap 5, React-Bootstrap |
+| Ikonit | React Icons |
+| Projektipohja | Create React App |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Rakenne
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+src/
+├── App.js              # Reititys ja sivupohja
+└── Komponentit/
+    ├── Header.js
+    ├── Navbar.js
+    ├── Jumbotron.js
+    ├── Footer.js
+    ├── Koti.js
+    ├── Lajiesittely.js
+    ├── Tapahtumat.js
+    ├── Yhteystiedot.js
+    └── kayttoehdot.js
+public/Media/           # Kuvat ja video
+```
 
-### `npm run eject`
+## Ajaminen
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+git clone https://github.com/PennasenKake/kivat-kirsut-sivusto.git
+cd kivat-kirsut-sivusto
+npm install
+npm start               # http://localhost:3000
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Rajaukset
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Seura, henkilöt ja yhteystiedot ovat kuvitteellisia.
+- Yhteydenottolomake on käyttöliittymätoteutus, eikä se lähetä viestejä, koska backend ei kuulunut kurssin laajuuteen.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Mitä opin
 
-## Learn More
+- Komponenttipohjainen rakenne ja yhteisten osien uudelleenkäyttö
+- Asiakaspuolen reititys React Routerilla
+- Responsiivinen suunnittelu Bootstrapin ruudukolla
+- Reactin elinkaari: tapahtumakuuntelijan lisääminen ja siivoaminen `useEffect`-hookilla
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Eero Korhonen** · [LinkedIn](https://www.linkedin.com/in/eero-korhonen-171115261) · [GitHub](https://github.com/PennasenKake)
